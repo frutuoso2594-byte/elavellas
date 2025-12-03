@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EllaVelas - Velas Artesanais e Estilizadas</title>
+    
+    <!-- Tailwind CSS (Estilos) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (Ícones) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Animações suaves */
+        .animate-fade-in-up { animation: fadeInUp 1s ease-out; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-800 selection:bg-amber-200">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5 bg-transparent">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold tracking-wider text-amber-900">
+                EllaVelas<span class="text-amber-600">.</span>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex gap-8 font-medium text-sm tracking-wide text-stone-600">
+                <a href="#sobre" class="hover:text-amber-700 transition-colors">A Marca</a>
+                <a href="#colecoes" class="hover:text-amber-700 transition-colors">Coleções</a>
+                <a href="#diferenciais" class="hover:text-amber-700 transition-colors">Por que Ella?</a>
+            </div>
+
+            <a href="https://wa.me/5584996413416?text=Olá!+Vim+pelo+site+da+EllaVelas+e+gostaria+de+conhecer+seus+produtos." 
+               target="_blank"
+               id="nav-cta"
+               class="hidden md:flex items-center gap-2 px-5 py-2 rounded-full font-semibold transition-all bg-white text-amber-900 hover:bg-stone-100">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Fale Conosco
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-amber-900" onclick="toggleMenu()">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden flex-col items-center justify-center gap-8">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 text-stone-600">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="#sobre" onclick="toggleMenu()" class="text-2xl font-serif text-amber-900">A Marca</a>
+        <a href="#colecoes" onclick="toggleMenu()" class="text-2xl font-serif text-amber-900">Coleções</a>
+        <a href="#diferenciais" onclick="toggleMenu()" class="text-2xl font-serif text-amber-900">Diferenciais</a>
+        <a href="https://wa.me/5584996413416" class="mt-4 px-8 py-3 bg-amber-600 text-white rounded-full font-bold">
+            WhatsApp
+        </a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1602523961358-f9f03dd557db?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Velas artesanais" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-stone-900/90"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center text-white">
+            <span class="inline-block py-1 px-3 border border-white/30 rounded-full text-xs uppercase tracking-[0.2em] mb-6 backdrop-blur-sm animate-fade-in-up">
+                Feito à mão com alma
+            </span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight drop-shadow-lg animate-fade-in-up">
+                Mais que luz, <br/> uma <span class="text-amber-300 italic">obra de arte.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-stone-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed animate-fade-in-up">
+                Transforme seu ambiente com velas estilizadas e exclusivas. Pequenas esculturas luminosas feitas para aquecer o coração e decorar com personalidade.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center animate-fade-in-up">
+                <a href="https://wa.me/5584996413416?text=Olá!+Gostaria+de+encomendar." 
+                   target="_blank"
+                   class="group relative px-8 py-4 bg-amber-600 text-white rounded-full font-bold text-lg shadow-lg shadow-amber-900/50 hover:bg-amber-500 hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                    <i data-lucide="message-circle" class="w-5 h-5 group-hover:animate-bounce"></i>
+                    Encomendar Agora
+                </a>
+                <a href="#colecoes" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full font-semibold hover:bg-white hover:text-amber-900 transition-all duration-300">
+                    Ver Coleções
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+            <i data-lucide="arrow-down" class="w-6 h-6"></i>
+        </div>
+    </header>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="py-24 bg-stone-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">Por que escolher EllaVelas?</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto rounded-full mb-6"></div>
+                <p class="text-stone-600">Cada vela é criada individualmente, unindo design artístico e qualidade superior.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-stone-100">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-lucide="star" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-stone-800 mb-3">Design Exclusivo</h3>
+                    <p class="text-center text-stone-600">Peças de decoração esculturais mesmo quando apagadas.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-stone-100">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-lucide="heart" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-stone-800 mb-3">100% Artesanal</h3>
+                    <p class="text-center text-stone-600">Feitas à mão com carinho e atenção aos mínimos detalhes.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-stone-100">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-lucide="gift" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-stone-800 mb-3">O Presente Perfeito</h3>
+                    <p class="text-center text-stone-600">Surpreenda quem você ama com aroma e beleza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLEÇÕES (Versão com Ícones para evitar erros de imagem) -->
+    <section id="colecoes" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-amber-600 font-bold tracking-wider uppercase text-sm">Nossas Criações</span>
+                    <h2 class="text-4xl font-serif font-bold text-stone-900 mt-2">Coleções em Destaque</h2>
+                </div>
+                <a href="https://wa.me/5584996413416" target="_blank" class="hidden md:flex items-center gap-2 text-amber-700 font-semibold hover:text-amber-900 transition-colors mt-4 md:mt-0">
+                    Ver catálogo completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card Esculturais -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 cursor-pointer bg-gradient-to-br from-amber-100 to-orange-100 border border-white/50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center text-amber-800/10 group-hover:text-amber-600/20 transition-colors duration-500 scale-150">
+                        <i data-lucide="palette" class="w-32 h-32" stroke-width="1"></i>
+                    </div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+                        <div class="w-20 h-20 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-amber-600 mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="palette" class="w-10 h-10"></i>
+                        </div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2 block">Bestseller</span>
+                        <h3 class="text-2xl font-serif text-stone-800 mb-2">Esculturais</h3>
+                        <p class="text-sm text-stone-500 font-medium">Formas artísticas e únicas</p>
+                    </div>
+                </div>
+
+                <!-- Card Aromáticas -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 cursor-pointer bg-gradient-to-br from-stone-100 to-stone-200 border border-white/50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center text-stone-800/10 group-hover:text-amber-600/20 transition-colors duration-500 scale-150">
+                        <i data-lucide="flame" class="w-32 h-32" stroke-width="1"></i>
+                    </div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+                        <div class="w-20 h-20 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-amber-600 mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="flame" class="w-10 h-10"></i>
+                        </div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2 block">Relaxamento</span>
+                        <h3 class="text-2xl font-serif text-stone-800 mb-2">Aromáticas</h3>
+                        <p class="text-sm text-stone-500 font-medium">Fragrâncias que envolvem</p>
+                    </div>
+                </div>
+
+                <!-- Card Minimalistas -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 cursor-pointer bg-gradient-to-br from-gray-100 to-slate-200 border border-white/50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center text-gray-800/10 group-hover:text-amber-600/20 transition-colors duration-500 scale-150">
+                        <i data-lucide="feather" class="w-32 h-32" stroke-width="1"></i>
+                    </div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+                        <div class="w-20 h-20 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-amber-600 mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="feather" class="w-10 h-10"></i>
+                        </div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2 block">Decoração</span>
+                        <h3 class="text-2xl font-serif text-stone-800 mb-2">Minimalistas</h3>
+                        <p class="text-sm text-stone-500 font-medium">Beleza na simplicidade</p>
+                    </div>
+                </div>
+
+                <!-- Card Personalizadas -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 cursor-pointer bg-gradient-to-br from-amber-50 to-yellow-100 border border-white/50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center text-yellow-800/10 group-hover:text-amber-600/20 transition-colors duration-500 scale-150">
+                        <i data-lucide="sparkles" class="w-32 h-32" stroke-width="1"></i>
+                    </div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+                        <div class="w-20 h-20 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-amber-600 mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="sparkles" class="w-10 h-10"></i>
+                        </div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2 block">Para Eventos</span>
+                        <h3 class="text-2xl font-serif text-stone-800 mb-2">Personalizadas</h3>
+                        <p class="text-sm text-stone-500 font-medium">Feitas sob medida para você</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="py-24 bg-stone-100 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=2072&auto=format&fit=crop" 
+                             alt="Processo artesanal" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <span class="text-amber-600 font-bold uppercase tracking-wider">A Essência</span>
+                    <h2 class="text-4xl font-serif font-bold text-stone-900 mt-2 mb-6">Criando pequenas constelações à mão</h2>
+                    <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                        Olá! Sou a criadora por trás da <strong>EllaVelas</strong>. Este projeto nasceu de uma paixão genuína por transformar espaços frios em lares acolhedores através da luz e do aroma.
+                    </p>
+                    <p class="text-lg text-stone-700 leading-relaxed">
+                        Não vejo as velas apenas como objetos. Para mim, são pequenas obras de arte que têm o poder de mudar a energia de um ambiente.
+                    </p>
+                    <div class="mt-8 flex gap-4">
+                        <div class="flex items-center gap-2 text-sm font-semibold text-stone-500">
+                            <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i> Produção Local
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-stone-500">
+                            <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i> Eco-friendly
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-serif font-bold text-white mb-2">EllaVelas<span class="text-amber-600">.</span></h2>
+                    <p class="text-sm max-w-xs">Iluminando momentos e transformando ambientes com arte e carinho.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    <a href="mailto:emanulas2005@gmail.com" class="hover:text-amber-500 transition-colors"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 mt-10 pt-6 text-center text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2025 EllaVelas. Todos os direitos reservados.</p>
+                <p class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Enviamos para todo o Brasil</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5584996413416" target="_blank"
+       class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all hover:scale-110 md:hidden animate-bounce">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Scripts (Lógica) -->
+    <script>
+        // Inicializa os ícones Lucide
+        lucide.createIcons();
+
+        // Lógica de Scroll da Navbar
+        const navbar = document.getElementById('navbar');
+        const navCta = document.getElementById('nav-cta');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-effect', 'shadow-md', 'py-3');
+                navbar.classList.remove('bg-transparent', 'py-5');
+                if(navCta) {
+                    navCta.classList.add('bg-amber-600', 'text-white');
+                    navCta.classList.remove('bg-white', 'text-amber-900');
+                }
+            } else {
+                navbar.classList.remove('glass-effect', 'shadow-md', 'py-3');
+                navbar.classList.add('bg-transparent', 'py-5');
+                if(navCta) {
+                    navCta.classList.remove('bg-amber-600', 'text-white');
+                    navCta.classList.add('bg-white', 'text-amber-900');
+                }
+            }
+        });
+
+        // Lógica do Menu Mobile
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        }
+    </script>
+</body>
+</html>
